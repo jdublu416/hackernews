@@ -1,0 +1,5 @@
+export const GET_HEADLINES = 'GET_HEADLINES';
+export const SEARCH_HEADLINES = 'SEARCH_HEADLINES';
+export const HEADLINE_ERROR = 'HEADLINE_ERROR';
+export const CLEAR_INPUT = 'CLEAR_INPUT';
+
