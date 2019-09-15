@@ -26,7 +26,7 @@ export const getHeadlines = () => async dispatch => {
 
 export const searchHeadlines = (text) => async dispatch => {
     try {
-        const res = await fetch(`http://hn.algolia.com/api/v1/search?query=${text}&tags=story`);
+        const res = await fetch(`https://hn.algolia.com/api/v1/search?query=${text}&tags=story`);
         const data = await res.json();
         console.log(data.hits);
         dispatch({
