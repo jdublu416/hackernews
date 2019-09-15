@@ -1,3 +1,10 @@
+###HackerNewsAPI
+A very simple React/Redux app using the HackerNews API.
+
+### Deployment
+
+This app is deployed using Netlify and can be found [here]("!#")
+
 ## Available Scripts
 
 In the project directory, you can run:
