@@ -29,7 +29,7 @@ const Home = ({
           <input
             type='text'
             name='text'
-            placeholder='Search for specific articles...'
+            placeholder='Search a topic...'
             value={text}
             onChange={handleChange}
           />
