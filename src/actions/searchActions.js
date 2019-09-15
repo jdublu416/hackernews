@@ -8,7 +8,7 @@ export const getHeadlines = () => async dispatch => {
    
   try {
     const res = await fetch(
-      'http://hn.algolia.com/api/v1/search?tags=front_page'
+      'https://hn.algolia.com/api/v1/search?tags=front_page'
     );
     const data = await res.json();
     console.log(data.hits);
