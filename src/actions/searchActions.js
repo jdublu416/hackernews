@@ -41,3 +41,4 @@ export const searchHeadlines = (text) => async dispatch => {
           });
     }
 }
+

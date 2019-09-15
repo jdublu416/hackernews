@@ -27,6 +27,7 @@ export default (state = initialState, action) => {
         ...state,
         error: payload
       };
+    
     default:
       return state;
   }

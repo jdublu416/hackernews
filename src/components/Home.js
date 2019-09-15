@@ -1,11 +1,11 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getHeadlines, searchHeadlines } from '../actions/searchActions';
+import { getHeadlines, searchHeadlines} from '../actions/searchActions';
 
 const Home = ({
   getHeadlines,
-  searchResults: { headlines },
+  searchResults: {headlines},
   searchHeadlines
 }) => {
   const [text, setText] = useState('');
@@ -24,6 +24,7 @@ const Home = ({
   return (
     <Fragment>
       <h2 className='text-center large'>Popular Front Page Headlines: </h2>
+      
       <div className='container'>
         <form className='form grid-2' onSubmit={onSubmit}>
           <input
