@@ -1,12 +1,13 @@
 import {
   GET_HEADLINES,
   SEARCH_HEADLINES,
+  SAVE_SEARCH_INDEX,
   HEADLINE_ERROR
 } from '../actions/types';
 
 const initialState = {
   headlines: [],
-  articles: [],
+  topics: [],
   error: {}
 };
 export default (state = initialState, action) => {
@@ -27,7 +28,12 @@ export default (state = initialState, action) => {
         ...state,
         error: payload
       };
-    
+    case SAVE_SEARCH_INDEX:
+      return {
+        ...state,
+        topics: [payload, ...state.topics]
+      };
+
     default:
       return state;
   }

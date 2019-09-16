@@ -1,12 +1,14 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getHeadlines, searchHeadlines} from '../actions/searchActions';
+import { getHeadlines, searchHeadlines, saveUserSearch} from '../actions/searchActions';
+
 
 const Home = ({
   getHeadlines,
-  searchResults: {headlines},
-  searchHeadlines
+  searchResults: {headlines, topics},
+  searchHeadlines,
+  saveUserSearch
 }) => {
   const [text, setText] = useState('');
   useEffect(() => {
@@ -17,6 +19,10 @@ const Home = ({
 
   const onSubmit = e => {
     e.preventDefault();
+    const newTopic = {
+      text
+    }
+    saveUserSearch(newTopic);
     searchHeadlines(text);
     setText('');
   };
@@ -25,7 +31,9 @@ const Home = ({
     <Fragment>
       <h2 className='text-center large'>Popular Front Page Headlines: </h2>
       
+      
       <div className='container'>
+        <h2>Searched topics: {topics.map(topic => (<span>{topic.text}  </span>))}</h2>
         <form className='form grid-2' onSubmit={onSubmit}>
           <input
             type='text'
@@ -66,7 +74,8 @@ const Home = ({
 Home.propTypes = {
   getHeadlines: PropTypes.func.isRequired,
   searchResults: PropTypes.object.isRequired,
-  searchHeadlines: PropTypes.func.isRequired
+  searchHeadlines: PropTypes.func.isRequired,
+  saveUserSearch: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -75,5 +84,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getHeadlines, searchHeadlines }
+  { getHeadlines, searchHeadlines, saveUserSearch }
 )(Home);
