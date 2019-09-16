@@ -31,7 +31,7 @@ export default (state = initialState, action) => {
     case SAVE_SEARCH_INDEX:
       return {
         ...state,
-        topics: [...state.topics, payload]
+        topics: [payload, ...state.topics]
       };
 
     default:
