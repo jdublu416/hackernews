@@ -33,7 +33,7 @@ const Home = ({
       
       
       <div className='container'>
-        <h2>Searched topics: {topics.map(topic => (<span>{topic.text}  </span>))}</h2>
+        <h2>Searched topics: {topics.map(topic => (<span>{topic.text}, {' '} </span>))}</h2>
         <form className='form grid-2' onSubmit={onSubmit}>
           <input
             type='text'
